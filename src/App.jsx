@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Carts from './Component/Carts/Carts'
 import Courses from './Component/Courses/Courses'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [courseTitle, SetCourseTitle] = useState([]);
@@ -14,15 +16,16 @@ function App() {
     const newTitle = ([...courseTitle, title])
     const isSelect = courseTitle.find(item => item.id === title.id)
     if (isSelect) {
-      return alert('this is clicked')
+      return toast.error("sorry , this already selected" , { theme: "dark" })
     }
     else {
       courseTitle.forEach(cart => {
         cost += cart.credit;
       })
       const total = 20 - cost;
+      console.log(total);
       if (total < 0) {
-        return alert('beshi')
+        return toast.warn("🤯sorry , credit hour remaining is over" , { theme: "colored" })
       }
       else {
         const newTotal = totalPrice + title.price;
@@ -34,10 +37,6 @@ function App() {
     setCredit(cost)
 
   }
-  // const handleTotal = total => {
-  //   console.log(total);
-
-  // }
 
 
 
@@ -51,6 +50,7 @@ function App() {
           credit={credit}
           totalPrice={totalPrice}
         ></Carts>
+        <ToastContainer />
       </div>
     </div>
   )

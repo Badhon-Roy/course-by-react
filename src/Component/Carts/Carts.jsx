@@ -22,7 +22,7 @@ Carts.propTypes = {
     courseTitle: PropTypes.array,
     remaining: PropTypes.number,
     credit: PropTypes.number,
-    credit: PropTypes.number
+    totalPrice: PropTypes.number
 }
 
 export default Carts;
