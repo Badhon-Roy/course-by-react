@@ -6,7 +6,8 @@ import Courses from './Component/Courses/Courses'
 function App() {
   const [courseTitle, SetCourseTitle] = useState([]);
   const [remaining, setRemaining] = useState(20);
-  const [credit, setCredit] = useState(0)
+  const [credit, setCredit] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const handleSelectBtn = title => {
     let cost = title.credit;
@@ -20,10 +21,12 @@ function App() {
         cost += cart.credit;
       })
       const total = 20 - cost;
-      if(total<0){
+      if (total < 0) {
         return alert('beshi')
       }
-      else{
+      else {
+        const newTotal = totalPrice + title.price;
+        setTotalPrice(newTotal)
         setRemaining(total)
         SetCourseTitle(newTitle)
       }
@@ -31,6 +34,11 @@ function App() {
     setCredit(cost)
 
   }
+  // const handleTotal = total => {
+  //   console.log(total);
+
+  // }
+
 
 
   return (
@@ -41,6 +49,7 @@ function App() {
         <Carts courseTitle={courseTitle}
           remaining={remaining}
           credit={credit}
+          totalPrice={totalPrice}
         ></Carts>
       </div>
     </div>

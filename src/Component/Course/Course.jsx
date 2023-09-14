@@ -14,7 +14,7 @@ const Course = ({course , handleSelectBtn}) => {
                 <p className='flex items-center lg:gap-2 font-medium'><span className='text-2xl'><FiDollarSign/></span> Price : {price}</p>
                 <p className='flex items-center lg:gap-2 font-medium'><span className='text-2xl'><BsBook/></span>Credit : {credit}hr</p>
             </div>
-            <button onClick={()=>handleSelectBtn(course)} className='bg-[#2F80ED] rounded-lg focus:bg-purple-500 py-3 text-xl font-medium w-full text-white'>Select</button>
+            <button onClick={() => handleSelectBtn(course)}  className='bg-[#2F80ED] rounded-lg focus:bg-purple-500 py-3 text-xl font-medium w-full text-white'>Select</button>
 
         </div>
     );
