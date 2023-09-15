@@ -11,8 +11,8 @@ const Course = ({course , handleSelectBtn}) => {
             <h2 className='text-[18px] font-semibold mt-4 mb-2'>{course_name}</h2>
             <p>{description}</p>
             <div className='flex justify-between items-center my-5 gap-2'>
-                <p className='flex items-center lg:gap-2 font-medium'><span className='text-2xl'><FiDollarSign/></span> Price : {price}</p>
-                <p className='flex items-center lg:gap-2 font-medium'><span className='text-2xl'><BsBook/></span>Credit : {credit}hr</p>
+                <p className='flex items-center gap-2 font-medium'><span className='text-2xl'><FiDollarSign/></span> Price : {price}</p>
+                <p className='flex items-center gap-2 font-medium'><span className='text-2xl'><BsBook/></span>Credit : {credit}hr</p>
             </div>
             <button onClick={() => handleSelectBtn(course)}  className='bg-[#2F80ED] rounded-lg focus:bg-purple-500 py-3 text-xl font-medium w-full text-white'>Select</button>
 
